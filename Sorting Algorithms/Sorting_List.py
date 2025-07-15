@@ -5,10 +5,25 @@ class Node:
 
 
 class Linked_List:
+    """
+    Linked_List class for managing a singly linked list.
+    Parameters:
+        - None: No parameters are needed for instantiation, initializes with an empty list.
+    Processing Logic:
+        - Utilizes nodes to construct a linked list, beginning with an empty head.
+    """
     def __init__(self):
         self.head = None
 
     def Insert_At_End(self, new_data):
+        """Insert_At_End method to append a new node at the end of a linked list.
+        Parameters:
+            - new_data (any): The data to be stored in the new node that will be appended to the list.
+        Returns:
+            - None: This method does not return any value.
+        Processing Logic:
+            - If the list is empty, the new node becomes the head of the list.
+            - Traverse the list until the end to append the new node."""
         new_node = Node(new_data)
         if self.head is None:
             self.head = new_node
@@ -19,6 +34,15 @@ class Linked_List:
         current.next = new_node
 
     def Sort(self):
+        """Sort the linked list in ascending order.
+        Parameters:
+            - self: An instance of the class containing a linked list head node.
+        Returns:
+            - None: This function modifies the linked list in place and does not return a value.
+        Processing Logic:
+            - Iteratively selects the minimum element from the unsorted portion of the list.
+            - Swaps the selected minimum element with the current element being positioned.
+            - Continues until all elements are sorted in ascending order."""
         temp = self.head
         while temp:
             minn = temp
